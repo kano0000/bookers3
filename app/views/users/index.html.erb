@@ -1,2 +1,14 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class = "containar">
+  <%= render "layouts/errors", obj: @book %>
+  <div class = "row col-11 mx-auto">
+    <div class = "col-md-3">
+      <h2>User info</h2>
+      <h2>New book</h2>
+        <%= render "books/form", book: @book %>
+    </div>
+    <div class = "col-md-8 offset-md-1">
+      <h2>Users</h2>
+        <%= render "index", users: @users %>
+    </div>
+  </div>
+</div><
