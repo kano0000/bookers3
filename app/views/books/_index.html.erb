@@ -1,0 +1,19 @@
+<table class = "table table-hover">
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+    <th colspan="3"></th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+    <td></td>
+    <td>
+      <%= link_to book_path(book) do %>
+        <%= book.title %>
+      <% end %>
+    </td>
+    <td><%= book.body %></td>
+  </tr>
+  <% end %>
+</table>
