@@ -1,2 +1,23 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class = "containar">
+  <div class = "row col-11 mx-auto">
+    <div class = "col-md-3">
+      <h2>User info</h2>
+      <h2>New book</h2>
+        <%= render "form", book: @book_new %>
+    </div>
+    <div class = "col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class = "table table-hover">
+      <tr>
+        <td></td>
+        <td>
+          <%= link_to book_path(@book) do %>
+            <%= @book.title %>
+          <% end %>
+        </td>
+        <td><%= @book.body %></td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
