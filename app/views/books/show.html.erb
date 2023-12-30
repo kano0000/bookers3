@@ -2,6 +2,7 @@
   <div class = "row col-11 mx-auto">
     <div class = "col-md-3">
       <h2>User info</h2>
+      <%= render "users/info", user: @user %>
       <h2>New book</h2>
         <%= render "form", book: @book_new %>
     </div>
