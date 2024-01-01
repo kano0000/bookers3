@@ -22,6 +22,7 @@
 </table>
   <% if current_user != user %>
     <%= render "relationships/btn", user: user, options: {class:""} %>
+    <%= render "chats/btn", user: user %>
   <% else %>
     <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
        <i class="fa-solid fa-user-gear"></i>
