@@ -1,4 +1,7 @@
 class Book < ApplicationRecord
+  
+  is_impressionable
+  
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :week_favorites, -> {where(created_at: 1.week.ago.beginning_of_day..Time.current.end_of_day)}

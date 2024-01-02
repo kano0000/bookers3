@@ -28,6 +28,7 @@
         <td id="comment_counter">
           <%= render "book_comments/counter", book: @book %>
         </td>
+        <td>Views:<%= @total_views %></td>
         <% if @book.user == current_user %>
         <td>
           <%= link_to "Edit",edit_book_path(@book), class: "btn btn-success"%>

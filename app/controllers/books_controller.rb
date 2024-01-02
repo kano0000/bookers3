@@ -25,6 +25,9 @@ class BooksController < ApplicationController
     @book_new = Book.new
     @user = @book.user
     @book_comment = BookComment.new
+    impressionist(@book, nil, unique: [:session_hash])
+    @books = @user.books
+    @total_views = @user.books.sum(&:impressionist_count)
   end
 
   def edit
