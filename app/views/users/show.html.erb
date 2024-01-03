@@ -10,6 +10,7 @@
     <div class = "col-md-8 offset-md-1">
       <h2>Books</h2>
         <%= render "books/index", books: @books %>
+      <%= render "posts_on_date_form", user: @user %>
       <h4>投稿数の前日比・前週比</h4>
       <div class = "table_container">
         <table class = "table table-bordered">
