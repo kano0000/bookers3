@@ -58,6 +58,21 @@
             </tr>
           </tbody>
         </table>
+        <h4>7日間分の投稿数</h4>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <% (6.downto(0)).each do |n| %>
+                  <td><%= n == 0 ? '今日' : "#{n}日前" %></td>
+                <% end %>
+              </tr>
+              <tr>
+                <% (6.downto(0)).each do |n| %>
+                  <td><%= @books.where(created_at: n.day.ago.all_day).count %></td>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
       </div>
     </div>
   </div>
