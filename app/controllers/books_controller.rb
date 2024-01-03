@@ -4,7 +4,8 @@ class BooksController < ApplicationController
   def index
     to = Time.current.at_end_of_day
     from = (to - 6.day).at_beginning_of_day
-    @books = Book.includes(:favorites).sort_by {|book| -book.favorites.where(created_at: from...to).count }
+    books = Book.includes(:favorites).sort_by {|book| -book.favorites.where(created_at: from...to).count }
+    @books = Kaminari.paginate_array(books).page(params[:page])
     @book = Book.new
   end
 
