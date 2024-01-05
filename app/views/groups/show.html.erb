@@ -20,7 +20,20 @@
           <%= @group.introduction %>
         </td>
         <td>
-          <%= link_to "Edit",edit_group_path(@group), class: "btn btn-success"%>
+          <% @group.users.each do |user| %>
+            <li style = "list-style:none;"><%= user.name %></li>
+          <% end %>
+        </td>
+        <td>
+          <% if @group.is_owned_by?(current_user) %>
+            <%= link_to "Edit",edit_group_path(@group), class: "btn btn-success"%>
+          <% else %>
+            <% if @group.include_user?(current_user) %>
+              <%= link_to "Leave this group", group_group_users_path(@group), method: :delete, class: "btn btn-danger" %>
+            <% else %>
+              <%= link_to "Join this group", group_group_users_path(@group), method: :post, class: "btn btn-success"%>
+            <% end %>
+          <% end %>
         </td>
       </tr>
       </table>
