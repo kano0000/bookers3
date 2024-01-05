@@ -9,6 +9,15 @@
     <div class = "col-md-8 offset-md-1">
       <h2>Group detail</h2>
       <table class = "table table-hover">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th>introductioin</th>
+            <th>members</th>
+          </tr>
+        </thead>
+        <tbody>
       <tr>
         <td>
           <%= image_tag @group.get_group_image(50,50) %>
@@ -36,6 +45,7 @@
           <% end %>
         </td>
       </tr>
+      </tbody>
       </table>
     </div>
   </div>
