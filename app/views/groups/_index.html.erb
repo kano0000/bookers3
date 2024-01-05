@@ -21,7 +21,7 @@
     <td><%= group.introduction %></td>
     <td><%= link_to "Show", group_path(group) %></td>
     <td>
-      <% if gruop.user == current_user %>
+      <% if group.is_owned_by?(current_user) %>
         <%= link_to "Edit",edit_group_path(group), class: "btn btn-success"%>
       <% end %>
     </td>

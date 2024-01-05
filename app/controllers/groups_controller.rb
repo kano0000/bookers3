@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   
   def show
     @book = Book.new
-    @grup = Group.find(params[:id])
+    @group = Group.find(params[:id])
     @user = User.find(current_user.id)
   end
   
@@ -48,7 +48,7 @@ class GroupsController < ApplicationController
     
     def ensure_correct_user
       @group = Group.find(params[:id])
-      unless @gruop.owner_id == current_user.id
+      unless @group.owner_id == current_user.id
         redirect_to groups_path
       end
     end

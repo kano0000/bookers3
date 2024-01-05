@@ -1,0 +1,29 @@
+<div class = "containar">
+  <div class = "row col-11 mx-auto">
+    <div class = "col-md-3">
+      <h2>User info</h2>
+      <%= render "users/info", user: @user %>
+      <h2>New book</h2>
+        <%= render "books/form", book: @book %>
+    </div>
+    <div class = "col-md-8 offset-md-1">
+      <h2>Group detail</h2>
+      <table class = "table table-hover">
+      <tr>
+        <td>
+          <%= image_tag @group.get_group_image(50,50) %>
+        </td>
+        <td>
+          <%= @group.name %>
+        </td>
+        <td>
+          <%= @group.introduction %>
+        </td>
+        <td>
+          <%= link_to "Edit",edit_group_path(@group), class: "btn btn-success"%>
+        </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
