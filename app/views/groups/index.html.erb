@@ -1,0 +1,11 @@
+<div class = "containar">
+  <div class = "row col-11 mx-auto">
+    <div class = "col-md-3">
+      <h2>Groups</h2>
+      <%= render "users/info", user: @user %>
+      <h2>New book</h2>
+        <%= render "books/form", book: @book %>
+    </div>
+    <div class = "col-md-8 offset-md-1">
+      <h2>Group</h2>
+        <%= render "index", groups: @groups %>
