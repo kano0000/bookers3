@@ -16,6 +16,9 @@
     <%=flash[:notice] %>
     <div class = "d-flex justify-content-center m-2">
       <%= render "searches/form" %>
+      <div class = "ml-2">
+        <%= render 'tag_searches/tagsearch' %>
+      </div>
     </div>
     <%= yield %>
     <%= render "layouts/footer" %>
