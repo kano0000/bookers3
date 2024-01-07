@@ -28,7 +28,7 @@
         <td id="comment_counter">
           <%= render "book_comments/counter", book: @book %>
         </td>
-        <td>Views:<%= @total_views %></td>
+        <td>Views:<%= @book.impressionist_count %></td>
         <td><%= render "books/static_rate", book: @book %></td>
         <% if @book.user == current_user %>
         <td>
