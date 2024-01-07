@@ -3,7 +3,7 @@
     <th></th>
     <th>Title</th>
     <th>Opinion</th>
-    <th colspan="3"></th>
+    <th colspan="5"></th>
   </tr>
   <tr>
     <% books.each do |book| %>
@@ -22,6 +22,7 @@
       <%= render "favorites/btn", book: book %>
     </td>
     <td><%= render "book_comments/counter", book: book %></td>
+    <td><%= render "books/static_rate", book: book %></td>
     <td>View:<%= book.impressionist_count %></td>
   </tr>
   <% end %>
