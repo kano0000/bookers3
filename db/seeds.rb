@@ -21,7 +21,7 @@ end
 
 # それぞれのユーザーに対して、5つの本を作成
 User.all.each do |user|
-  5.times do |n|
+  3.times do |n|
     book = Book.create(
       title: "本#{n+1}", # 本のタイトルを設定
       body: "サンプル投稿です#{n+1}", # 本の本文を設定
