@@ -20,11 +20,13 @@
     <th><%= link_to user.followers.count, user_followers_path(user) %></th>
   </tr>
 </table>
-  <% if current_user != user %>
-    <%= render "relationships/btn", user: user, options: {class:""} %>
-    <%= render "chats/btn", user: user %>
-  <% else %>
-    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
-       <i class="fa-solid fa-user-gear"></i>
+  <% unless user.guest_user? %>
+    <% if current_user != user %>
+      <%= render "relationships/btn", user: user, options: {class:""} %>
+      <%= render "chats/btn", user: user %>
+    <% else %>
+      <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+         <i class="fa-solid fa-user-gear"></i>
+      <% end %>
     <% end %>
   <% end %>
